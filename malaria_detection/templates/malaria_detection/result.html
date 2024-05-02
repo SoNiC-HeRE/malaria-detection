@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <h2 style="background-color:hsl(247, 100%, 64%);"></h2>
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #BDC696; /* Background color */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /* Result Page Styles */
+        .result-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .result-container p {
+            margin: 10px 0;
+        }
+        .bottom {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 10px;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Result</h1>
+        <div class="result-container">
+            {% if detected_class %}
+                
+                <p>Detected class: {{ detected_class }}</p>
+                <p>Chance of Infection: {{ parasitized_prob }} %</p>
+                
+            {% else %}
+                <p>Error detecting parasites.</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class ="bottom"> DISCLAIMER: COUNSULT THE NEAREST PATHOLOGIST</div>
+</body>
+</html>
